@@ -27,64 +27,56 @@
 // //Mah.Ceil
 // //Math.Random 
 // //Math.Floor
+// //Math.round
 
-function mudaCor() {
-
-
-    let r = 0;
-    let g = 0;
-    let b = 0;
-
-    r = Math.round(Math.random() *255);
-    g = Math.round(Math.random() *255);
-    b = Math.round(Math.random() *255);
-
-    const cabecalho = document.querySelector(".cabecalho")
-    cabecalho.style.backgroudColor = `rgb(${r}, ${g}, ${b})`;
-
-    tmp = setTimeout(mudaCor, 1000)
-}
-mudaCor();
+// function mudaCor() {
 
 
+//     let r = 0;
+//     let g = 0;
+//     let b = 0;
 
+//     r = Math.round(Math.random() *255);
+//     g = Math.round(Math.random() *255);
+//     b = Math.round(Math.random() *255);
 
+//     const cabecalho = document.querySelector(".cabecalho")
+//     cabecalho.style.backgroudColor = `rgb(${r}, ${g}, ${b})`;
 
-function mudaCor() {
-
-
-    let r = 0;
-    let g = 0;
-    let b = 0;
-
-    r = Math.round(Math.random() *255);
-    g = Math.round(Math.random() *255);
-    b = Math.round(Math.random() *255);
-
-    const banner1 = document.querySelector(".banner-1")
-    banner1.style.backgroudColor = `rgb(${r}, ${g}, ${b})`;
-
-    tmp = setTimeout(mudaCor, 1000)
-}
-mudaCor();
+//     tmp = setTimeout(mudaCor, 1000)
+// }
+// mudaCor();
 
 
 
 
-function mudaCor2() {
 
+// function mudaBanner(){
+//     const imgElement = document.querySelector('.banner-1 img');
+//     let nr = Math.ceil(Math.random() *3);
+//     imgElement.src=`./img/banner-lateral-${nr}.png`;
 
-    let r = 0;
-    let g = 0;
-    let b = 0;
+//     const imgElement2 = document.querySelector('.banner-2 img');
+//     nr = Math.ceil(Math.random() *3);
+//     imgElement2.src = `./img/banner-lateral-${nr}.png`;
 
-    r = Math.round(Math.random() *255);
-    g = Math.round(Math.random() *255);
-    b = Math.round(Math.random() *255);
+//     setTimeout(mudaBanner, 2000);
+// }
+// mudaBanner();
 
-    const banner2 = document.querySelector(".banner-2")
-    banner2.style.backgroudColor = `rgb(${r}, ${g}, ${b})`;
+const botao = document.querySelector("button");
+// console.log(botao);
 
-    tmp = setTimeout(mudaCor2, 1000)
-}
-mudaCor2();
+botao.addEventListener('click', function(){
+    if(this.textContent == 'LIGAR'){
+        const imgElement = document.querySelector('img[alt="lampada apagada"]')
+        imgElement.src = "./img/pic_bulbon.gif";
+        imgElement.alt = "Lampada acesa";
+        this.textContent = "DESLIGAR"
+    }else{
+        const imgElement = document.querySelector('img[alt="lampada acesa"]')
+        imgElement.src = "./img/pic_bulboff.gif";
+        imgElement.alt = "Lampada apagada";
+        this.textContent = "LIGAR"
+    }
+});
